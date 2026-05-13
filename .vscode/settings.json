@@ -8,6 +8,8 @@
   "workbench.activityBar.location": "default",
   "editor.lineNumbers": "off",
   "files.eol": "\n", // Final de linha sempre será LF
+  "workbench.editor.labelFormat": "short",
+  "editor.tabSize": 2,
 
   // 🛠 Formatação e Lint
   "editor.defaultFormatter": "esbenp.prettier-vscode",
