@@ -34,5 +34,5 @@ const initialState: TaskStateModel = {
 export function App() {
   const [state, setState] = useState<TaskStateModel>(initialState);
 
-  return <Home state={state} setState={setState} />;
+  return <Home />;
 }
