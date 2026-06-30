@@ -5,9 +5,15 @@ import { DefaultInput } from '../Defaultinput';
 
 
 export function MainForm() {
+  function handleCreateNewTask(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    console.log('DEU CERTO');
+  }
+
   return (
-    <form className='form' action=''>
-      <div className='formRow'>
+    <form onSubmit={handleCreateNewTask} className='form' action=''>
+      <div className='formRow'> 
         <DefaultInput
           labelText='task'
           id='meuInput'
