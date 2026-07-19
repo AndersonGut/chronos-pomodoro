@@ -3,8 +3,30 @@
 // state <- o estado atual
 // action <- a ação disparada, geralmente é um objeto com type e (opcionalmente) payload
 // type <- o tipo da ação, geralmente uma string (pode ser enum, constante, etc)
+
+import type { TaskModel } from '../../models/TaskModel';
+
 // payload <- os dados extras enviados junto com a action, se necessário para atualizar o estado
-export enum TaskActionTypes {
+export enum taskActionTypes {
   START_TASK = 'START_TASK',
-  INCREMENT_TASK = 'INTERRUPT_TASK',
+  INTERRUPT_TASK = 'INTERRUPT_TASK',
+  RESET_STATE = 'RESET_STATE',
 }
+
+export type TaskActionsWithPayload =
+  | {
+      type: taskActionTypes.START_TASK;
+      payload: TaskModel;
+    }
+  | {
+      type: taskActionTypes.INTERRUPT_TASK;
+      payload: TaskModel;
+    };
+
+export type TaskActionsWithoutPayload = {
+  type: taskActionTypes.RESET_STATE;
+};
+
+export type TaskActionModel =
+  | TaskActionsWithPayload
+  | TaskActionsWithoutPayload;
